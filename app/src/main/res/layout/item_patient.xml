@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/photo_image_view"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/ic_patient_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/patient_first_name_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:lines="1"
+        android:ellipsize="end"
+        tools:text="Johny"
+        app:layout_constraintTop_toTopOf="@+id/photo_image_view"
+        app:layout_constraintStart_toEndOf="@+id/photo_image_view"
+        app:layout_constraintEnd_toStartOf="@+id/patient_second_name_text_view"/>
+
+    <TextView
+        android:id="@+id/patient_second_name_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:lines="1"
+        android:ellipsize="end"
+        tools:text="Black"
+        app:layout_constraintTop_toTopOf="@+id/photo_image_view"
+        app:layout_constraintStart_toEndOf="@+id/patient_first_name_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/delete_button"/>
+
+    <TextView
+        android:id="@+id/patient_room_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        tools:text="322"
+        app:layout_constraintStart_toStartOf="@+id/patient_first_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/patient_first_name_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/delete_button"/>
+
+    <ImageView
+        android:id="@+id/delete_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_delete_patient"
+        android:padding="6dp"
+        android:layout_marginEnd="12dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="photo_image_view,patient_room_text_view"
+        app:barrierDirection="bottom"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/barrier"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
